@@ -79,13 +79,51 @@ public class Main extends login{
                 }
                 else if(table_name.equals("Seed") || table_name.equals("SEED") ||table_name.equals("seed")){
                     int seed_id = user_input.nextInt();
-                    int Weather_id = user_input.nextInt();
                     String seed_name = user_input.next();
                     double price = user_input.nextDouble();
 
                     //match the synatx that is actually executing in my sql
-                    query = "INSERT INTO "+table_name+" VALUES ('"+seed_id+"','"+Weather_id+"','"+seed_name+"','"+price+"')";
+                    query = "INSERT INTO "+table_name+" VALUES ('"+seed_id+"','"+seed_name+"','"+price+"')";
                     //Insert function is which actually executes the query it is present in class Database operations
+                    d.Insert(query);
+                }
+                else if(table_name.equals("Weather")||table_name.equals("WEATHER") || table_name.equals("weather")){
+                    int Weather_id = user_input.nextInt();
+                    String Weather_name = user_input.next();
+                    String prevail = user_input.next();
+                    int chances = user_input.nextInt();
+
+                    //match the syntax that is actually executing in my sql
+                    query = "INSERT INTO "+table_name+" VALUES ('"+Weather_id+"','"+Weather_name+"','"+prevail+"','"+chances+"')";
+
+                    //insert function is which is actually executing the query it is present in class Database operations
+                    d.Insert(query);
+                }
+                else if(table_name.equals("WaterRes")||table_name.equals("WATERRES") || table_name.equals("waterres")){
+                    String WaterRes_Name = user_input.next();
+                    int Resource_dependency = user_input.nextInt();
+
+                    //match the synatx that is actually executing in my sql
+                    query = "INSERT INTO "+table_name+" VALUES ('"+WaterRes_Name+"','"+Resource_dependency+"')";
+                    //Insert function is which actually executes the query it is present in class Database operations
+                    d.Insert(query);
+                }
+                else if(table_name.equals("Rainfall") || table_name.equals("RAINFALL") || table_name.equals("rainfall")){
+                    String Rainfall_type = user_input.next();
+                    int Intensity = user_input.nextInt();
+                    int Rainfall_dependency = user_input.nextInt();
+
+                    query = "INSERT INTO "+table_name+" VALUES ('"+Rainfall_type+"','"+Intensity+"','"+Rainfall_dependency+"')";
+                    d.Insert(query);
+                }
+                else if(table_name.equals("Soil_Nutrients") || table_name.equals("SOIL_NUTRIENT") || table_name.equals("soil_nutirents")){
+                    int Area_id = user_input.nextInt();
+                    int Nutrient_id = user_input.nextInt();
+                    int Act_Req_percent = user_input.nextInt();
+                    int Avail_Percent = user_input.nextInt();
+                    int Req_Percent = Act_Req_percent - Avail_Percent;
+
+                    query = "INSERT INTO "+table_name+" VALUES ('"+Area_id+"','"+Nutrient_id+"','"+Act_Req_percent+"','"+Avail_Percent+"','"+Req_Percent+"')";
                     d.Insert(query);
                 }
             }
