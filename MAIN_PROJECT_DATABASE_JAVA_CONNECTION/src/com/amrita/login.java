@@ -17,6 +17,7 @@ public class login extends signup{
                 Statement statement = connection.createStatement();
 
         ) {
+            //user selects an option here to sign  up or login
             System.out.println("===========Menu===================");
             System.out.println("1. Login");
             System.out.println("2. Sign Up");
@@ -25,19 +26,20 @@ public class login extends signup{
             Scanner input = new Scanner(System.in);
             int option = input.nextInt();
             if(option == 1){
-                   // generating the query
+                   // generating the select query
                     String query = "select * from credentials";
 
-                    //creating a result set of the object
+                    //executing the query and storing the result set in an object
                     ResultSet resultset = statement.executeQuery(query);
 
                     //using the information that is stored in result set to validate the login
                     String username_input;
                     String password_input;
-
+                    //input username
                     System.out.print("Username : ");
                     username_input = input.next();
                     System.out.print("\n");
+                    //input password
                     System.out.print("Password : ");
                     password_input = input.next();
                     //checking for the user int the database;
@@ -47,10 +49,12 @@ public class login extends signup{
 
                         if(Username.equals(username_input)){
                             if(Password.equals(password_input)){
+                                //if username and password both are found in the database then login_bool i set to true
                                 login_bool = true;
                                 return login_bool;
                             }
                             else{
+                                //else set to false
                                 login_bool = false;
                             }
                         }

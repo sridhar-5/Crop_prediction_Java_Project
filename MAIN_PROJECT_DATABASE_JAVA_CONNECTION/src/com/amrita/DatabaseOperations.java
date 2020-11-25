@@ -87,8 +87,24 @@ public class DatabaseOperations{
             Connection connection = DriverManager.getConnection(Dburl,username,password);
             //creating a statement
             Statement statement = connection.createStatement();
+            //executing the query
             statement.executeUpdate(query);
             System.out.println("TABLE DROPPED");
+
+        }catch (SQLException throwables){
+            throwables.printStackTrace();
+        }
+    }
+    public void prediction(String query) throws SQLException{
+        try{
+            //creating the connection
+            Connection connection = DriverManager.getConnection(Dburl,username,password);
+
+            //creating the statement and execution sequence starting
+
+            Statement statement = connection.createStatement();
+            //execting the query
+            ResultSet result = statement.executeQuery(query);
 
         }catch (SQLException throwables){
             throwables.printStackTrace();
