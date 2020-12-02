@@ -5,7 +5,6 @@ Created with Intellij IDEA
 Author : @Sridhar
 Created on 16th November
 */
-
 import java.sql.*;
 import java.util.Scanner;
 public class login extends signup{
