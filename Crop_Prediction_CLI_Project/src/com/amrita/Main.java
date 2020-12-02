@@ -200,7 +200,7 @@ public class Main extends login{
             System.out.println("OOPS!Wrong Credentials Please enter the correct credentials");
             System.out.println("please input '1' if you wish to change your password");
             Scanner user_input = new Scanner(System.in);
-            System.out.println("please select an option : ");
+            System.out.print("please select an option : ");
             int reset_option = user_input.nextInt();
             if(reset_option == 1){
                 Password_Reset reset = new Password_Reset();
