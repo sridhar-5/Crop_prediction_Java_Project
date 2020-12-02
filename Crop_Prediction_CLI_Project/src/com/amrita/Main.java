@@ -8,7 +8,6 @@ Created on 16th November
 
 import java.sql.*;
 import java.util.Scanner;
-
 public class Main extends login{
     public static void main(String[] args) throws SQLException {
         login x = new login();
@@ -179,93 +178,15 @@ public class Main extends login{
             }
             //if option is 6 then the prediction actually starts
             else if(option == 6){
-                //establishing the connection
-                Connection connection = DriverManager.getConnection(d.Dburl,d.username,d.password);
 
-                //preparing the statement
-                Statement statement = connection.createStatement();
-                //predicting the type of irrigation
-                System.out.println("Please enter the Area_id : ");
-                int ar_id = user_input.nextInt();
-                query = "select Rainfall_type from Area_Rainfall where Area_id="+ar_id;
-                //executing the statement and storing the result in a result set
-                ResultSet result = statement.executeQuery(query);
+                //creating the predict_iriigation object
+                Predict_Irrigation obj = new Predict_Irrigation();
+                //using obj object
+                obj.predict_irrigation();
 
-                //predicting the irrigation type based on rain dependencies
-                String rainfall_type="";
-                while(result.next()){
-                    rainfall_type = result.getString("Rainfall_type");
-                }
-                //executing the other query to get the rain dependency
-                query = "select Rainfall_dependency from Rainfall where Rainfall_type = '"+rainfall_type+"'";
-                //executing the query and storing the result set and printing type of irrigation is to be used
-                result = statement.executeQuery(query);
-                int rain_dependency = 0;
-                while(result.next()){
-                    rain_dependency = result.getInt("Rainfall_dependency");
-                }
-                int irr_cost = 0;
-                //rain dependency less irrigation efficiency should be high
-                if(rain_dependency < 50){
-                    query = "select Irrigation_Name,Irr_cost from Irrigation where Irr_efficiency > 80";
-                    String irr_name = "";
-                    ResultSet result2 = statement.executeQuery(query);
-                    while(result2.next()) {
-                        irr_name = result2.getString("Irrigation_Name");
-                        irr_cost = result2.getInt("Irr_cost");
-                    }
-                    System.out.println("Suggested Irrigation : " +irr_name);
-                    System.out.println("Cost : " +irr_cost);
-                }
-                //rain dependency is to the okay level then irrigation efficiency should also be to the medium level
-                else if(rain_dependency < 70 && rain_dependency > 50){
-                    query = "select Irrigation_Name,Irr_cost from Irrigation where Irr_efficiency > 50 and Irr_efficiency < 80";
-                    String irr_name = "";
-
-                    ResultSet result2 = statement.executeQuery(query);
-                    while(result2.next()) {
-                        irr_name = result2.getString("Irrigation_Name");
-                        irr_cost = result2.getInt("Irr_cost");
-                        System.out.println("Suggested Irrigation : " +irr_name);
-                        System.out.println("Cost : " +irr_cost);
-                    }
-
-                }
-                //if the rain dependency is high so the irrigation efficiency less
-                else if(rain_dependency > 70){
-                    query = "select Irrigation_Name,Irr_cost from Irrigation where Irr_efficiency <= 60";
-                    String irr_name = "";
-                    ResultSet result2 = statement.executeQuery(query);
-                    while(result2.next()) {
-                        irr_name = result2.getString("Irrigation_Name");
-                        irr_cost = result2.getInt("Irr_cost");
-                        System.out.println("Suggested Irrigation : " +irr_name);
-                        System.out.println("Cost : "+irr_cost);
-                    }
-                }
-                //Now the Prediction of the crop starts
-                //since the predicted data is already entered and stored into the table
-                //generate a query that displays the crop name
-                query = "select Seed_id from Area_Seed where Area_id="+ar_id;
-
-                //storing the result of select query in result set object
-
-                result = statement.executeQuery(query);
-                //iterating through the object
-                int seed_id = 0;
-                while(result.next()){
-                    seed_id = result.getInt("Seed_id");
-                }
-                query = "select Seed_Name,Seed_cost from Seeds where Seed_id="+seed_id;
-                result = statement.executeQuery(query);
-                String seed_name = "";
-                int seed_cost = 0;
-                while(result.next()){
-                     seed_name = result.getString("Seed_Name");
-                     seed_cost = result.getInt("Seed_cost");
-                }
-                System.out.println("Suggested Crop to be grown : " +seed_name);
-                System.out.println("Cost : "+seed_cost);
+                //creating the Predict Crop object
+                Predict_Crop crop = new Predict_Crop();
+                crop.predict_crop();
             }
         }
         else{
