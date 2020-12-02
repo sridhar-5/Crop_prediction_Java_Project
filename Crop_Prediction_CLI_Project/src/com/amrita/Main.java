@@ -187,6 +187,13 @@ public class Main extends login{
                 //creating the Predict Crop object
                 Predict_Crop crop = new Predict_Crop();
                 crop.predict_crop();
+
+                System.out.print("Please enter the Area-id: ");
+                int area_id = user_input.nextInt();
+
+                //predicting the type of rainfall in the area to the farmer
+                Predict_Rainfall rain = new Predict_Rainfall(area_id);
+                rain.predict_rainfall();
             }
         }
         else{
