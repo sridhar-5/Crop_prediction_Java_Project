@@ -32,6 +32,7 @@ public class login extends signup{
             System.out.println("2. Sign Up");
             System.out.println("============END====================");
             //creating a scanner object to take the inputs
+            System.out.print("Please select an option:");
             Scanner input = new Scanner(System.in);
             int option = input.nextInt();
             if(option == 1){
@@ -47,7 +48,6 @@ public class login extends signup{
                     //input username
                     System.out.print("Username : ");
                     username_input = input.next();
-                    System.out.print("\n");
                     //input password
                     System.out.print("Password : ");
                     password_input = input.next();

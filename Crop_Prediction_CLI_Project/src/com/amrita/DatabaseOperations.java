@@ -5,7 +5,6 @@ Created with Intellij IDEA
 Author : @Sridhar
 Created on 16th November
 */
-
 import java.sql.*;
 
 public class DatabaseOperations{
@@ -35,7 +34,6 @@ public class DatabaseOperations{
     public void Update(String query) throws SQLException{
         try{
             int rows = 0;
-
             //creating the connection to the database
             Connection connection = DriverManager.getConnection(Dburl,username,password);
 
