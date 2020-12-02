@@ -8,7 +8,6 @@ Created on 16th November
 
 import java.sql.*;
 import java.util.Scanner;
-
 public class login extends signup{
 
     public static boolean login_bool;
