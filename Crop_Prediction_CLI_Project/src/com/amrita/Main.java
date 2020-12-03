@@ -16,7 +16,7 @@ public class Main extends login{
             DatabaseOperations d = new DatabaseOperations();
 
             String query;
-
+            //command line interface option selection here
             System.out.println("=============Welcome to the Crop Prediction Console===============");
             System.out.println("Please select an option to operate a database ");
             System.out.println("1. Insert");
@@ -196,6 +196,7 @@ public class Main extends login{
             }
         }
         else{
+            //if the passsword is wrong then u get an option to reset password here
             System.out.println("OOPS!Wrong Credentials Please enter the correct credentials");
             System.out.println("please input '1' if you wish to change your password");
             Scanner user_input = new Scanner(System.in);

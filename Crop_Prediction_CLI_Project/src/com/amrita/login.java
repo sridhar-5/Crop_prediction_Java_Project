@@ -22,7 +22,6 @@ public class login extends signup{
 
                 //creating a statement and executing a query
                 Statement statement = connection.createStatement();
-
         ) {
             //user selects an option here to sign  up or login
             System.out.println("===========Menu===================");
@@ -68,6 +67,7 @@ public class login extends signup{
                     }
                 }
             else if(option == 2){
+                //call for the sign up and the sign up here
                 signup();
                 login();
             }

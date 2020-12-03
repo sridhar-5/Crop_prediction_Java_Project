@@ -31,6 +31,7 @@ public class Predict_Rainfall extends DatabaseOperations{
             while(result.next()){
                 rainfall_type = result.getString("Rainfall_type");
             }
+            //result of the rainfall
             System.out.print("The type of rainfall expected in your area is "+rainfall_type);
         }catch (SQLException throwables){
             throwables.printStackTrace();
