@@ -10,7 +10,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class Password_Reset {
+abstract class reset{
+    abstract void password_reset() throws SQLException;
+}
+public class Password_Reset extends reset{
     public String username = "root";
     public String password = "root";
     public String Dburl = "jdbc:mysql://localhost:3306/crop_prediction_based_on_soil_nutrient_estimation";
