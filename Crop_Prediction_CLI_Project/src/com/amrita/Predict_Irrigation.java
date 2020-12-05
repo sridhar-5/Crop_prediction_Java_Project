@@ -23,7 +23,7 @@ public class Predict_Irrigation extends DatabaseOperations{
             Statement statement = connection.createStatement();
             //predicting the type of irrigation
             System.out.print("Please enter the Area_id : ");
-            int ar_id = user_input.nextInt();
+            ar_id = user_input.nextInt();
             query = "select Rainfall_type from Area_Rainfall where Area_id="+ar_id;
             //executing the statement and storing the result in a result set
             ResultSet result = statement.executeQuery(query);
