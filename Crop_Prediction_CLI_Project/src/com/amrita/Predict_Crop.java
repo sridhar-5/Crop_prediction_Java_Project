@@ -7,7 +7,10 @@ Created on 2nd December
 import java.sql.*;
 import java.util.Scanner;
 
-public class Predict_Crop extends Predict_Irrigation{
+abstract class Prediction{
+    public abstract void predict_crop() throws SQLException;
+}
+public class Predict_Crop extends Prediction{
     String query;
 
     public String username = "root";
@@ -16,6 +19,7 @@ public class Predict_Crop extends Predict_Irrigation{
 
     public void predict_crop() throws SQLException{
         try{
+            int ar_id;
             Connection connection = DriverManager.getConnection(Dburl,username,password);
             //Now the Prediction of the crop starts
             //since the predicted data is already entered and stored into the table
