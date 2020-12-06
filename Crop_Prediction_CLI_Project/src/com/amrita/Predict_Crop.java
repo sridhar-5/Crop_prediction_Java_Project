@@ -7,9 +7,11 @@ Created on 2nd December
 import java.sql.*;
 import java.util.Scanner;
 
+//abstract class Prediction to increase complexity;
 abstract class Prediction{
     public abstract void predict_crop() throws SQLException;
 }
+//inheriting from the abstract class
 public class Predict_Crop extends Prediction{
     String query;
 
