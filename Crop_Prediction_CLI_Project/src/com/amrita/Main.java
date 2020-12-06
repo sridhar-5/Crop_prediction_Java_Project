@@ -196,9 +196,9 @@ public class Main extends login{
             }
         }
         else{
-            //if the passsword is wrong then u get an option to reset password here
+            //if the password is wrong then u get an option to reset password here
             System.out.println("OOPS!Wrong Credentials Please enter the correct credentials");
-            System.out.println("please input '1' if you wish to change your password");
+            System.out.println("please enter '1' if you wish to change your password");
             Scanner user_input = new Scanner(System.in);
             System.out.print("please select an option : ");
             int reset_option = user_input.nextInt();
