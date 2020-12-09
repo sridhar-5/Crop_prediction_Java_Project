@@ -7,7 +7,15 @@ Created on 2nd December
 import java.sql.*;
 import java.util.Scanner;
 
-public class Predict_Rainfall extends DatabaseOperations{
+//adding abstract class
+abstract class Predicting_Rainfall{
+    public abstract void predict_rainfall() throws SQLException;
+}
+public class Predict_Rainfall extends Predicting_Rainfall{
+    public String username = "root";
+    public String password = "root";
+    public String Dburl = "jdbc:mysql://localhost:3306/crop_prediction_based_on_soil_nutrient_estimation";
+
     public String query;
     public int area_id;
     //default constructor
