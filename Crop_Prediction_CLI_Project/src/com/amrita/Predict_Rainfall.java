@@ -10,6 +10,10 @@ import java.util.Scanner;
 public class Predict_Rainfall extends DatabaseOperations{
     public String query;
     public int area_id;
+    //default constructor
+    public Predict_Rainfall(){
+        this.area_id = 0;
+    }
     //parametrized constructor
     public Predict_Rainfall(int ar_id){
         this.area_id = ar_id;
