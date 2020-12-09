@@ -11,6 +11,7 @@ import java.util.Scanner;
 abstract class Predicting_Rainfall{
     public abstract void predict_rainfall() throws SQLException;
 }
+//inheriting from the abstract class
 public class Predict_Rainfall extends Predicting_Rainfall{
     public String username = "root";
     public String password = "root";
