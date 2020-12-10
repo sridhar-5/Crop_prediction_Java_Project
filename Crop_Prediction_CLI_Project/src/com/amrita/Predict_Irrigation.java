@@ -8,7 +8,6 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class Predict_Irrigation extends DatabaseOperations{
-
     public String query;
     public int ar_id;
     public void predict_irrigation() throws SQLException {
@@ -66,7 +65,6 @@ public class Predict_Irrigation extends DatabaseOperations{
                     System.out.println("Suggested Irrigation : " +irr_name);
                     System.out.println("Cost : " +irr_cost);
                 }
-
             }
             //if the rain dependency is high so the irrigation efficiency less
             else if(rain_dependency > 70){
