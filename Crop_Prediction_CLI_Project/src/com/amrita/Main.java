@@ -178,7 +178,7 @@ public class Main extends login{
             //if option is 6 then the prediction actually starts
             else if(option == 6){
 
-                //creating the predict_iriigation object
+                //creating the predict_irrigation object
                 Predict_Irrigation obj = new Predict_Irrigation();
                 //using obj object
                 obj.predict_irrigation();

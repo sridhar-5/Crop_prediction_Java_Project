@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class Predict_Irrigation extends DatabaseOperations{
     public String query;
     public int ar_id;
+
     public void predict_irrigation() throws SQLException {
         try{
             //creating the database operations object
