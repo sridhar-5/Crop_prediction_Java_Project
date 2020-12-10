@@ -34,6 +34,7 @@ public class Predict_Rainfall extends Predicting_Rainfall{
 
             //preparing the statement
             Scanner user_input = new Scanner(System.in);
+            //preparing the sql statement
             Statement statement = connection.createStatement();
             query = "select Rainfall_type from Area_Rainfall where Area_id="+area_id;
             //executing the statement and storing the result in a result set
@@ -41,6 +42,7 @@ public class Predict_Rainfall extends Predicting_Rainfall{
 
             //predicting the rainfall type
             String rainfall_type="";
+            //iterating through the resultset object and storing the rainfall type in variable and printing it
             while(result.next()){
                 rainfall_type = result.getString("Rainfall_type");
             }
