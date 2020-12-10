@@ -14,7 +14,9 @@ abstract class Prediction{
 //inheriting from the abstract class
 public class Predict_Crop extends Prediction{
     String query;
-
+    public Predict_Crop(){
+        this.query = "";
+    }
     public String username = "root";
     public String password = "root";
     public String Dburl = "jdbc:mysql://localhost:3306/crop_prediction_based_on_soil_nutrient_estimation";

@@ -11,6 +11,10 @@ public class Predict_Irrigation extends DatabaseOperations{
     public String query;
     public int ar_id;
 
+    public Predict_Irrigation(){
+        this.query = "";
+        this.ar_id = 0;
+    }
     public void predict_irrigation() throws SQLException {
         try{
             //creating the database operations object
