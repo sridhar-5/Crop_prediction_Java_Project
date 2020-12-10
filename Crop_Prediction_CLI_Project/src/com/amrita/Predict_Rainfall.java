@@ -47,6 +47,7 @@ public class Predict_Rainfall extends Predicting_Rainfall{
             //result of the rainfall
             System.out.print("The type of rainfall expected in your area is "+rainfall_type);
         }catch (SQLException throwables){
+            //catching the error if any occurs
             throwables.printStackTrace();
         }
     }
