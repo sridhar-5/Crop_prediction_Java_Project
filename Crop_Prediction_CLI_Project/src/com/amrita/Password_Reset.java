@@ -34,6 +34,7 @@ public class Password_Reset extends reset{
             System.out.print("Please enter the new_password : ");
             String new_password = user_input.next();
             query = "UPDATE credentials SET  password ='" + new_password + "' WHERE username = '"+user+"'";
+            //executing the query here
             int row = statement.executeUpdate(query);
             System.out.println(row + " rows have been updated");
             System.out.println("Your password has been changed successfully");
