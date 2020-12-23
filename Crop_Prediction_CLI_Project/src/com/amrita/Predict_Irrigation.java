@@ -84,6 +84,7 @@ public class Predict_Irrigation extends DatabaseOperations{
                 }
             }
         }catch (SQLException throwables){
+            //result an exception
             throwables.printStackTrace();
         }
     }
