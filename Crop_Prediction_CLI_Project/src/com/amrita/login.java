@@ -69,6 +69,7 @@ public class login extends signup{
             else if(option == 2){
                 //call for the sign up and the sign up here
                 signup();
+                //since he is a user now prompt him to login again
                 login();
             }
         }
