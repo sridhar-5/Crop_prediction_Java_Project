@@ -10,9 +10,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
+//abstract class reset here
 abstract class reset{
     abstract void password_reset() throws SQLException;
 }
+//inheriting the properties from the abstract class
 public class Password_Reset extends reset{
     public String username = "root";
     public String password = "root";
